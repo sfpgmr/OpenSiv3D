@@ -24,6 +24,16 @@ namespace s3d
 		};
 	}
 
+	bool String::contains(const value_type ch) const
+	{
+		return (indexOf(ch) != String::npos);
+	}
+
+	bool String::contains(const StringView s) const
+	{
+		return (indexOf(s) != String::npos);
+	}
+
 	bool String::starts_with(const value_type ch) const noexcept
 	{
 		return (not m_string.empty() && (m_string.front() == ch));
@@ -232,7 +242,7 @@ namespace s3d
 
 	String String::capitalized() const&
 	{
-		return String(*this).capitalize();
+		return std::move(String(*this).capitalize());
 	}
 
 	String String::capitalized()&&
@@ -352,7 +362,7 @@ namespace s3d
 
 	String String::lowercased() const&
 	{
-		return String(*this).lowercase();
+		return std::move(String(*this).lowercase());
 	}
 
 	String String::lowercased()&&
@@ -561,7 +571,7 @@ namespace s3d
 
 	String String::replaced(const value_type oldChar, const value_type newChar) const&
 	{
-		return String(*this).replace(oldChar, newChar);
+		return std::move(String(*this).replace(oldChar, newChar));
 	}
 
 	String String::replaced(const value_type oldChar, const value_type newChar)&&
@@ -648,7 +658,7 @@ namespace s3d
 
 	String String::rotated(const std::ptrdiff_t count) const&
 	{
-		return String(*this).rotate(count);
+		return std::move(String(*this).rotate(count));
 	}
 
 	String String::rotated(const std::ptrdiff_t count)&&
@@ -726,7 +736,7 @@ namespace s3d
 
 	String String::shuffled()&&
 	{
-		return shuffled(GetDefaultRNG());
+		return std::move(*this).shuffled(GetDefaultRNG());
 	}
 
 	Array<String> String::split(const value_type ch) const
@@ -826,7 +836,7 @@ namespace s3d
 
 	String String::swapcased() const&
 	{
-		return String(*this).swapcase();
+		return std::move(String(*this).swapcase());
 	}
 
 	String String::swapcased()&&
@@ -872,7 +882,7 @@ namespace s3d
 
 	String String::uppercased() const&
 	{
-		return String(*this).uppercase();
+		return std::move(String(*this).uppercase());
 	}
 
 	String String::uppercased()&&
@@ -891,7 +901,7 @@ namespace s3d
 
 	String String::rsorted() const&
 	{
-		return String(*this).rsort();
+		return std::move(String(*this).rsort());
 	}
 
 	String String::rsorted()&&
@@ -910,7 +920,7 @@ namespace s3d
 
 	String String::sorted() const&
 	{
-		return String(*this).sort();
+		return std::move(String(*this).sort());
 	}
 
 	String String::sorted()&&
@@ -942,7 +952,7 @@ namespace s3d
 
 	String String::sorted_and_uniqued() const&
 	{
-		return String(*this).sort_and_unique();
+		return std::move(String(*this).sort_and_unique());
 	}
 
 	String String::sorted_and_uniqued()&&
