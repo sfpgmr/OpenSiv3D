@@ -1660,6 +1660,24 @@
     <Filter Include="src\Siv3D\TextAreaEditState">
       <UniqueIdentifier>{53f1a7f1-0e25-4829-83ed-b4b71ff1720c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Siv3D\Troubleshooting">
+      <UniqueIdentifier>{e6cba460-6b0f-41d0-a6e5-50fa2e1e229b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Siv3D\NinePatch">
+      <UniqueIdentifier>{a246703f-2273-459e-9baa-503e14d5742c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Siv3D\Trail">
+      <UniqueIdentifier>{5d9bae8d-939b-448a-893e-4d82700363e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Siv3D\TrailRenderer">
+      <UniqueIdentifier>{ce4f017c-4630-45e3-a695-274d3a558fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Siv3D\TrailMotion">
+      <UniqueIdentifier>{6981b834-84e1-480e-bd1b-f9d9863a5070}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Siv3D\SimpleFollowCamera3D">
+      <UniqueIdentifier>{0b0d71c1-50bc-4f3a-b3ba-1f6fdf02c33c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Siv3D\include\Siv3D.hpp">
@@ -7014,6 +7032,33 @@
     <ClInclude Include="..\Siv3D\include\Siv3D\TextAreaEditState.hpp">
       <Filter>include\Siv3D</Filter>
     </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D\Troubleshooting\Troubleshooting.hpp">
+      <Filter>src\Siv3D\Troubleshooting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\NinePatch.hpp">
+      <Filter>include\Siv3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\detail\NinePatch.ipp">
+      <Filter>include\Siv3D\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D\NinePatch\NinePatchDetail.hpp">
+      <Filter>src\Siv3D\NinePatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\Trail.hpp">
+      <Filter>include\Siv3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D\TrailRenderer\CTrailRenderer.hpp">
+      <Filter>src\Siv3D\TrailRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\src\Siv3D\TrailRenderer\ITrailRenderer.hpp">
+      <Filter>src\Siv3D\TrailRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\TrailMotion.hpp">
+      <Filter>include\Siv3D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Siv3D\include\Siv3D\SimpleFollowCamera3D.hpp">
+      <Filter>include\Siv3D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Siv3D\src\Siv3D\Common\Siv3DEngine.cpp">
@@ -10195,6 +10240,30 @@
     </ClCompile>
     <ClCompile Include="..\Siv3D\src\Siv3D\TextAreaEditState\SivTextAreaEditState.cpp">
       <Filter>src\Siv3D\TextAreaEditState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\Troubleshooting\Troubleshooting.cpp">
+      <Filter>src\Siv3D\Troubleshooting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\NinePatch\SivNinePatch.cpp">
+      <Filter>src\Siv3D\NinePatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\NinePatch\NinePatchDetail.cpp">
+      <Filter>src\Siv3D\NinePatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\Trail\SivTrail.cpp">
+      <Filter>src\Siv3D\Trail</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\TrailRenderer\TrailRendererFactory.cpp">
+      <Filter>src\Siv3D\TrailRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\TrailRenderer\CTrailRenderer.cpp">
+      <Filter>src\Siv3D\TrailRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\TrailMotion\SivTrailMotion.cpp">
+      <Filter>src\Siv3D\TrailMotion</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Siv3D\src\Siv3D\SimpleFollowCamera3D\SivSimpleFollowCamera3D.cpp">
+      <Filter>src\Siv3D\SimpleFollowCamera3D</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

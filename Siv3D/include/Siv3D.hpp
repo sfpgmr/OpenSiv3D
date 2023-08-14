@@ -1532,6 +1532,8 @@
 
 # include <Siv3D/DebugCamera3D.hpp>
 
+# include <Siv3D/SimpleFollowCamera3D.hpp>
+
 //////////////////////////////////////////////////
 //
 //	シェーダー | Shader
@@ -1597,9 +1599,14 @@
 // ビデオ・テクスチャ | Video texture
 # include <Siv3D/VideoTexture.hpp>
 
+// レンダーテクスチャ | Render texture
 # include <Siv3D/RenderTexture.hpp>
 
+// マルチサンプルレンダーテクスチャ | Multisample render texture
 # include <Siv3D/MSRenderTexture.hpp>
+
+// 9 パッチテクスチャ | Nine-patch texture
+# include <Siv3D/NinePatch.hpp>
 
 //////////////////////////////////////////////////
 //
@@ -1620,6 +1627,7 @@
 // フォント描画方式 | Font rendering method
 # include <Siv3D/FontMethod.hpp>
 
+// 標準フォントの種類 | Standard font type
 # include <Siv3D/Typeface.hpp>
 
 // フォント | Font
@@ -1702,6 +1710,12 @@
 
 // エフェクト | Effect
 # include <Siv3D/Effect.hpp>
+
+// 軌跡 | Trail
+# include <Siv3D/Trail.hpp>
+
+// 軌跡のモーション | Trail motion
+# include <Siv3D/TrailMotion.hpp>
 
 //////////////////////////////////////////////////
 //
@@ -1824,6 +1838,7 @@
 //
 //////////////////////////////////////////////////
 
+// トランプカード描画 | Playing card
 # include <Siv3D/PlayingCard.hpp>
 
 //////////////////////////////////////////////////
@@ -1832,6 +1847,7 @@
 //
 //////////////////////////////////////////////////
 
+// OpenAI API | OpenAI API
 # include <Siv3D/OpenAI.hpp>
 
 //////////////////////////////////////////////////

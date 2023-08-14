@@ -435,6 +435,8 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/Network/CNetwork.cpp
   ../Siv3D/src/Siv3D/Network/NetworkFactory.cpp
   ../Siv3D/src/Siv3D/Network/SivNetwork.cpp
+  ../Siv3D/src/Siv3D/NinePatch/NinePatchDetail.cpp
+  ../Siv3D/src/Siv3D/NinePatch/SivNinePatch.cpp
   ../Siv3D/src/Siv3D/None/SivNone.cpp
   ../Siv3D/src/Siv3D/OpenCV_Bridge/SivOpenCV_Bridge.cpp
   ../Siv3D/src/Siv3D/OrientedBox/SivOrientedBox.cpp
@@ -549,6 +551,7 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/Shape2D/SivShape2D.cpp
   ../Siv3D/src/Siv3D/SIMDMath/SivSIMDMath.cpp
   ../Siv3D/src/Siv3D/SimpleAnimation/SivSimpleAnimation.cpp
+  ../Siv3D/src/Siv3D/SimpleFollowCamera3D/SivSimpleFollowCamera3D.cpp
   ../Siv3D/src/Siv3D/SimpleGUI/SivSimpleGUI.cpp
   # ../Siv3D/src/Siv3D/SimpleHTTP/SivSimpleHTTP.cpp
   ../Siv3D/src/Siv3D/SimpleMenuBar/SivSimpleMenuBar.cpp
@@ -601,9 +604,14 @@ set(SIV3D_INTERNAL_SOURCES
   ../Siv3D/src/Siv3D/ToastNotification/ToastNotificationFactory.cpp
   ../Siv3D/src/Siv3D/TOMLReader/SivTOMLReader.cpp
   ../Siv3D/src/Siv3D/Triangle/SivTriangle.cpp
+  ../Siv3D/src/Siv3D/TrailMotion/SivTrailMotion.cpp
+  ../Siv3D/src/Siv3D/TrailRenderer/CTrailRenderer.cpp
+  ../Siv3D/src/Siv3D/TrailRenderer/TrailRendererFactory.cpp
+  ../Siv3D/src/Siv3D/Trail/SivTrail.cpp
   ../Siv3D/src/Siv3D/Transformer2D/SivTransformer2D.cpp
   ../Siv3D/src/Siv3D/Transformer3D/SivTransformer3D.cpp
   ../Siv3D/src/Siv3D/Triangle3D/SivTriangle3D.cpp
+  ../Siv3D/src/Siv3D/Troubleshooting/Troubleshooting.cpp
   ../Siv3D/src/Siv3D/Twitter/SivTwitter.cpp
   ../Siv3D/src/Siv3D/Unicode/SivUnicode.cpp
   ../Siv3D/src/Siv3D/Unicode/UnicodeUtility.cpp

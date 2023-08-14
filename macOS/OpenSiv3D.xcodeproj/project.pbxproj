@@ -24,6 +24,9 @@
 		2C0A4D6F2566A855002A4B5E /* sw_ft_math.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A4D612566A855002A4B5E /* sw_ft_math.c */; };
 		2C0A4D86256A1C6C002A4B5E /* example in Resources */ = {isa = PBXBuildFile; fileRef = 2C0A4D85256A1C6C002A4B5E /* example */; };
 		2C0A4DA1256A21E6002A4B5E /* sprite.metal in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A4D9C256A21E6002A4B5E /* sprite.metal */; };
+		2C0A98D12A7BB93800402926 /* SivNinePatch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A98CE2A7BB93800402926 /* SivNinePatch.cpp */; };
+		2C0A98D22A7BB93800402926 /* NinePatchDetail.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C0A98CF2A7BB93800402926 /* NinePatchDetail.hpp */; };
+		2C0A98D32A7BB93800402926 /* NinePatchDetail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C0A98D02A7BB93800402926 /* NinePatchDetail.cpp */; };
 		2C0CEDAF249F4E5B003647A7 /* engine in Resources */ = {isa = PBXBuildFile; fileRef = 2C0CEDAE249F4E5B003647A7 /* engine */; };
 		2C0FBD7226297CBA0050E354 /* WebcamInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C0FBD7126297CB90050E354 /* WebcamInfo.mm */; };
 		2C0FF4E224C2E1900014C96E /* BinaryWriterDetail.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C0FF4E024C2E1900014C96E /* BinaryWriterDetail.hpp */; };
@@ -129,6 +132,12 @@
 		2C13C9D725BD29FC0054B968 /* ldo.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C13C99A25BD29FC0054B968 /* ldo.c */; };
 		2C13C9D825BD29FC0054B968 /* lundump.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C13C99B25BD29FC0054B968 /* lundump.h */; };
 		2C1778C31CE0D62A00BB8AD0 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CA7F74E1CA7F43D00495647 /* Main.cpp */; };
+		2C27113E2A7EA6CF00BD4014 /* SivTrail.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2711362A7EA6CE00BD4014 /* SivTrail.cpp */; };
+		2C27113F2A7EA6CF00BD4014 /* SivTrailMotion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2711382A7EA6CF00BD4014 /* SivTrailMotion.cpp */; };
+		2C2711402A7EA6CF00BD4014 /* ITrailRenderer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C27113A2A7EA6CF00BD4014 /* ITrailRenderer.hpp */; };
+		2C2711412A7EA6CF00BD4014 /* TrailRendererFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C27113B2A7EA6CF00BD4014 /* TrailRendererFactory.cpp */; };
+		2C2711422A7EA6CF00BD4014 /* CTrailRenderer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C27113C2A7EA6CF00BD4014 /* CTrailRenderer.hpp */; };
+		2C2711432A7EA6CF00BD4014 /* CTrailRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C27113D2A7EA6CF00BD4014 /* CTrailRenderer.cpp */; };
 		2C27A9DF256A446E00756617 /* MetalRenderPipeline2DManager.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C27A9DE256A446E00756617 /* MetalRenderPipeline2DManager.hpp */; };
 		2C27A9E1256A59FC00756617 /* MetalRenderPipeline2DManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C27A9E0256A59FC00756617 /* MetalRenderPipeline2DManager.mm */; };
 		2C27A9EB256E359400756617 /* GL4BlendState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C27A9E3256E359400756617 /* GL4BlendState.cpp */; };
@@ -305,6 +314,8 @@
 		2C2AA3AC26009C74003F3EBC /* b2_distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C2AA34E26009C74003F3EBC /* b2_distance.cpp */; };
 		2C2AA3AD26009C74003F3EBC /* b2_contact_manager.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2AA34F26009C74003F3EBC /* b2_contact_manager.h */; };
 		2C2AA3AE26009C74003F3EBC /* b2_edge_shape.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C2AA35026009C74003F3EBC /* b2_edge_shape.h */; };
+		2C3464092A7B81EB0083F8B7 /* Troubleshooting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C3464072A7B81EB0083F8B7 /* Troubleshooting.cpp */; };
+		2C34640A2A7B81EB0083F8B7 /* Troubleshooting.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C3464082A7B81EB0083F8B7 /* Troubleshooting.hpp */; };
 		2C36F835267F937400691B1C /* Renderer3DFactory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2C36F834267F937400691B1C /* Renderer3DFactory.mm */; };
 		2C36F83A267F939200691B1C /* CRenderer3D_GL4.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C36F838267F939200691B1C /* CRenderer3D_GL4.hpp */; };
 		2C36F83B267F939200691B1C /* CRenderer3D_GL4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C36F839267F939200691B1C /* CRenderer3D_GL4.cpp */; };
@@ -884,6 +895,7 @@
 		2C8E717D24C7458800CECCAE /* SivEnvironmentVariable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E717C24C7458800CECCAE /* SivEnvironmentVariable.cpp */; };
 		2C8E718B24C749C500CECCAE /* CResource.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2C8E718924C749C500CECCAE /* CResource.hpp */; };
 		2C8E718C24C749C500CECCAE /* CResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C8E718A24C749C500CECCAE /* CResource.cpp */; };
+		2C94E2262A85369B00AD6935 /* SivSimpleFollowCamera3D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2C94E2252A85369B00AD6935 /* SivSimpleFollowCamera3D.cpp */; };
 		2C95662A264501B900539B85 /* gaussian_distribution.cc in Sources */ = {isa = PBXBuildFile; fileRef = 2C956629264501B900539B85 /* gaussian_distribution.cc */; };
 		2C9566BF2645626000539B85 /* mz_strm_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C9566872645625F00539B85 /* mz_strm_os_posix.c */; };
 		2C9566C12645626000539B85 /* mz_strm_pkcrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 2C9566892645625F00539B85 /* mz_strm_pkcrypt.c */; };
@@ -1964,6 +1976,11 @@
 		2C0A4D7C256A1807002A4B5E /* nanoflann.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = nanoflann.hpp; sourceTree = "<group>"; };
 		2C0A4D85256A1C6C002A4B5E /* example */ = {isa = PBXFileReference; lastKnownFileType = folder; name = example; path = App/example; sourceTree = "<group>"; };
 		2C0A4D9C256A21E6002A4B5E /* sprite.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = sprite.metal; sourceTree = "<group>"; };
+		2C0A98CB2A7BB8EC00402926 /* NinePatch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NinePatch.hpp; sourceTree = "<group>"; };
+		2C0A98CC2A7BB90F00402926 /* NinePatch.ipp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NinePatch.ipp; sourceTree = "<group>"; };
+		2C0A98CE2A7BB93800402926 /* SivNinePatch.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SivNinePatch.cpp; sourceTree = "<group>"; };
+		2C0A98CF2A7BB93800402926 /* NinePatchDetail.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = NinePatchDetail.hpp; sourceTree = "<group>"; };
+		2C0A98D02A7BB93800402926 /* NinePatchDetail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NinePatchDetail.cpp; sourceTree = "<group>"; };
 		2C0CEDAE249F4E5B003647A7 /* engine */ = {isa = PBXFileReference; lastKnownFileType = folder; name = engine; path = App/engine; sourceTree = "<group>"; };
 		2C0F89ED249E3945008B9220 /* catch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = catch.hpp; sourceTree = "<group>"; };
 		2C0FBD7126297CB90050E354 /* WebcamInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebcamInfo.mm; sourceTree = "<group>"; };
@@ -2177,6 +2194,14 @@
 		2C1778B21CE0D5DB00BB8AD0 /* Siv3D-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Siv3D-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1778BF1CE0D5DB00BB8AD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C22E2C11FD5BAF0002735AB /* Siv3D-Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Siv3D-Test.entitlements"; sourceTree = SOURCE_ROOT; };
+		2C2711332A7EA69900BD4014 /* Trail.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Trail.hpp; sourceTree = "<group>"; };
+		2C2711342A7EA69900BD4014 /* TrailMotion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TrailMotion.hpp; sourceTree = "<group>"; };
+		2C2711362A7EA6CE00BD4014 /* SivTrail.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SivTrail.cpp; sourceTree = "<group>"; };
+		2C2711382A7EA6CF00BD4014 /* SivTrailMotion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SivTrailMotion.cpp; sourceTree = "<group>"; };
+		2C27113A2A7EA6CF00BD4014 /* ITrailRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ITrailRenderer.hpp; sourceTree = "<group>"; };
+		2C27113B2A7EA6CF00BD4014 /* TrailRendererFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TrailRendererFactory.cpp; sourceTree = "<group>"; };
+		2C27113C2A7EA6CF00BD4014 /* CTrailRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CTrailRenderer.hpp; sourceTree = "<group>"; };
+		2C27113D2A7EA6CF00BD4014 /* CTrailRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CTrailRenderer.cpp; sourceTree = "<group>"; };
 		2C27A9DE256A446E00756617 /* MetalRenderPipeline2DManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MetalRenderPipeline2DManager.hpp; sourceTree = "<group>"; };
 		2C27A9E0256A59FC00756617 /* MetalRenderPipeline2DManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MetalRenderPipeline2DManager.mm; sourceTree = "<group>"; };
 		2C27A9E3256E359400756617 /* GL4BlendState.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GL4BlendState.cpp; sourceTree = "<group>"; };
@@ -2353,6 +2378,8 @@
 		2C2AA34E26009C74003F3EBC /* b2_distance.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = b2_distance.cpp; sourceTree = "<group>"; };
 		2C2AA34F26009C74003F3EBC /* b2_contact_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_contact_manager.h; sourceTree = "<group>"; };
 		2C2AA35026009C74003F3EBC /* b2_edge_shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2_edge_shape.h; sourceTree = "<group>"; };
+		2C3464072A7B81EB0083F8B7 /* Troubleshooting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Troubleshooting.cpp; sourceTree = "<group>"; };
+		2C3464082A7B81EB0083F8B7 /* Troubleshooting.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Troubleshooting.hpp; sourceTree = "<group>"; };
 		2C36F834267F937400691B1C /* Renderer3DFactory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Renderer3DFactory.mm; sourceTree = "<group>"; };
 		2C36F838267F939200691B1C /* CRenderer3D_GL4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CRenderer3D_GL4.hpp; sourceTree = "<group>"; };
 		2C36F839267F939200691B1C /* CRenderer3D_GL4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CRenderer3D_GL4.cpp; sourceTree = "<group>"; };
@@ -3024,6 +3051,8 @@
 		2C8E718924C749C500CECCAE /* CResource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CResource.hpp; sourceTree = "<group>"; };
 		2C8E718A24C749C500CECCAE /* CResource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CResource.cpp; sourceTree = "<group>"; };
 		2C903A912922863D008A61F4 /* btree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = btree.h; sourceTree = "<group>"; };
+		2C94E2232A85367B00AD6935 /* SimpleFollowCamera3D.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SimpleFollowCamera3D.hpp; sourceTree = "<group>"; };
+		2C94E2252A85369B00AD6935 /* SivSimpleFollowCamera3D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SivSimpleFollowCamera3D.cpp; sourceTree = "<group>"; };
 		2C956629264501B900539B85 /* gaussian_distribution.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gaussian_distribution.cc; sourceTree = "<group>"; };
 		2C9566872645625F00539B85 /* mz_strm_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_os_posix.c; sourceTree = "<group>"; };
 		2C9566892645625F00539B85 /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_pkcrypt.c; sourceTree = "<group>"; };
@@ -4983,6 +5012,16 @@
 			path = msl;
 			sourceTree = "<group>";
 		};
+		2C0A98CD2A7BB93800402926 /* NinePatch */ = {
+			isa = PBXGroup;
+			children = (
+				2C0A98CE2A7BB93800402926 /* SivNinePatch.cpp */,
+				2C0A98CF2A7BB93800402926 /* NinePatchDetail.hpp */,
+				2C0A98D02A7BB93800402926 /* NinePatchDetail.cpp */,
+			);
+			path = NinePatch;
+			sourceTree = "<group>";
+		};
 		2C0CED51249F2E2D003647A7 /* macOS_Linux */ = {
 			isa = PBXGroup;
 			children = (
@@ -5312,6 +5351,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2C2711352A7EA6CE00BD4014 /* Trail */ = {
+			isa = PBXGroup;
+			children = (
+				2C2711362A7EA6CE00BD4014 /* SivTrail.cpp */,
+			);
+			path = Trail;
+			sourceTree = "<group>";
+		};
+		2C2711372A7EA6CF00BD4014 /* TrailMotion */ = {
+			isa = PBXGroup;
+			children = (
+				2C2711382A7EA6CF00BD4014 /* SivTrailMotion.cpp */,
+			);
+			path = TrailMotion;
+			sourceTree = "<group>";
+		};
+		2C2711392A7EA6CF00BD4014 /* TrailRenderer */ = {
+			isa = PBXGroup;
+			children = (
+				2C27113A2A7EA6CF00BD4014 /* ITrailRenderer.hpp */,
+				2C27113B2A7EA6CF00BD4014 /* TrailRendererFactory.cpp */,
+				2C27113C2A7EA6CF00BD4014 /* CTrailRenderer.hpp */,
+				2C27113D2A7EA6CF00BD4014 /* CTrailRenderer.cpp */,
+			);
+			path = TrailRenderer;
+			sourceTree = "<group>";
+		};
 		2C27A9E2256E359400756617 /* BlendState */ = {
 			isa = PBXGroup;
 			children = (
@@ -5614,6 +5680,15 @@
 				2C2AA34E26009C74003F3EBC /* b2_distance.cpp */,
 			);
 			path = collision;
+			sourceTree = "<group>";
+		};
+		2C3464062A7B81EB0083F8B7 /* Troubleshooting */ = {
+			isa = PBXGroup;
+			children = (
+				2C3464072A7B81EB0083F8B7 /* Troubleshooting.cpp */,
+				2C3464082A7B81EB0083F8B7 /* Troubleshooting.hpp */,
+			);
+			path = Troubleshooting;
 			sourceTree = "<group>";
 		};
 		2C36F833267F937400691B1C /* Renderer3D */ = {
@@ -7426,6 +7501,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		2C94E2242A85369B00AD6935 /* SimpleFollowCamera3D */ = {
+			isa = PBXGroup;
+			children = (
+				2C94E2252A85369B00AD6935 /* SivSimpleFollowCamera3D.cpp */,
+			);
+			path = SimpleFollowCamera3D;
+			sourceTree = "<group>";
+		};
 		2C9566852645625F00539B85 /* minizip */ = {
 			isa = PBXGroup;
 			children = (
@@ -8005,6 +8088,7 @@
 				2CC8B68528C752EE008C770A /* NavMesh.hpp */,
 				2CC8B4BB28C752ED008C770A /* NavMeshConfig.hpp */,
 				2CC8B6B828C752EE008C770A /* Network.hpp */,
+				2C0A98CB2A7BB8EC00402926 /* NinePatch.hpp */,
 				2CC8B68928C752EE008C770A /* Noise.hpp */,
 				2CC8B6D028C752EE008C770A /* None.hpp */,
 				2CC8B71628C752EE008C770A /* NonNull.hpp */,
@@ -8127,6 +8211,7 @@
 				2CC8B64D28C752EE008C770A /* SIMDCollision.hpp */,
 				2CC8B68D28C752EE008C770A /* SIMDMath.hpp */,
 				2CC8B52928C752ED008C770A /* SimpleAnimation.hpp */,
+				2C94E2232A85367B00AD6935 /* SimpleFollowCamera3D.hpp */,
 				2CC8B54C28C752ED008C770A /* SimpleGUI.hpp */,
 				2CC8B4E328C752ED008C770A /* SimpleHTTP.hpp */,
 				2C398E3F28F2CEF6006A24E3 /* SimpleMenuBar.hpp */,
@@ -8178,6 +8263,8 @@
 				2CC8B65A28C752EE008C770A /* ToastNotificationItem.hpp */,
 				2CC8B66D28C752EE008C770A /* ToastNotificationState.hpp */,
 				2CC8B4F728C752ED008C770A /* TOMLReader.hpp */,
+				2C2711332A7EA69900BD4014 /* Trail.hpp */,
+				2C2711342A7EA69900BD4014 /* TrailMotion.hpp */,
 				2CC8B70128C752EE008C770A /* Transformer2D.hpp */,
 				2CC8B6C028C752EE008C770A /* Transformer3D.hpp */,
 				2CC8B6E228C752EE008C770A /* Transition.hpp */,
@@ -8448,6 +8535,7 @@
 				2CC8B5F928C752ED008C770A /* Model.ipp */,
 				2CC8B5A428C752ED008C770A /* MSRenderTexture.ipp */,
 				2CC8B63028C752ED008C770A /* MultiPolygon.ipp */,
+				2C0A98CC2A7BB90F00402926 /* NinePatch.ipp */,
 				2CC8B5BB28C752ED008C770A /* Noise.ipp */,
 				2CC8B62C28C752ED008C770A /* Number.ipp */,
 				2CC8B5ED28C752ED008C770A /* OffsetCircular.ipp */,
@@ -8715,6 +8803,7 @@
 				2CC8BA1F28C7532E008C770A /* MultiPolygon */,
 				2CC8B8A028C7532D008C770A /* NavMesh */,
 				2CC8B83E28C7532D008C770A /* Network */,
+				2C0A98CD2A7BB93800402926 /* NinePatch */,
 				2CC8BADF28C7532E008C770A /* None */,
 				2CB4C6EB29C44DBB00ADFD8C /* OpenAI */,
 				2CC8BB0128C7532E008C770A /* OpenCV_Bridge */,
@@ -8788,6 +8877,7 @@
 				2CC8B9E028C7532D008C770A /* Shape2D */,
 				2CC8BA6628C7532E008C770A /* SIMDMath */,
 				2CC8B9DE28C7532D008C770A /* SimpleAnimation */,
+				2C94E2242A85369B00AD6935 /* SimpleFollowCamera3D */,
 				2CC8B77428C7532D008C770A /* SimpleGUI */,
 				2CC8B87B28C7532D008C770A /* SimpleHTTP */,
 				2C398E4028F2CF16006A24E3 /* SimpleMenuBar */,
@@ -8822,10 +8912,14 @@
 				2CC8B84628C7532D008C770A /* Timer */,
 				2CC8BAE528C7532E008C770A /* ToastNotification */,
 				2CC8B76628C7532D008C770A /* TOMLReader */,
+				2C2711352A7EA6CE00BD4014 /* Trail */,
+				2C2711372A7EA6CF00BD4014 /* TrailMotion */,
+				2C2711392A7EA6CF00BD4014 /* TrailRenderer */,
 				2CC8B77028C7532D008C770A /* Transformer2D */,
 				2CC8BB1328C7532E008C770A /* Transformer3D */,
 				2CC8B86F28C7532D008C770A /* Triangle */,
 				2CC8BB1128C7532E008C770A /* Triangle3D */,
+				2C3464062A7B81EB0083F8B7 /* Troubleshooting */,
 				2CC8B74D28C7532C008C770A /* Twitter */,
 				2CC8B7EA28C7532D008C770A /* Unicode */,
 				2CC8B86D28C7532D008C770A /* UnicodeConverter */,
@@ -12341,6 +12435,7 @@
 				2CC8BB9728C7532F008C770A /* ILogger.hpp in Headers */,
 				2C48BF0125CFB8C500A93CE3 /* Bitmap.h in Headers */,
 				2C636E562657F7D300AF029F /* soloud_c.h in Headers */,
+				2C2711402A7EA6CF00BD4014 /* ITrailRenderer.hpp in Headers */,
 				2CC8BC2528C7532F008C770A /* CAssetMonitor.hpp in Headers */,
 				2C28E94B2796816C0004E07D /* zstd_opt.h in Headers */,
 				2CC8BCE328C75330008C770A /* CScript.hpp in Headers */,
@@ -12524,6 +12619,7 @@
 				2CC8BB5828C7532F008C770A /* ILicenseManager.hpp in Headers */,
 				2C48BF0825CFB8C500A93CE3 /* EdgeHolder.h in Headers */,
 				2CC8BDEB28C75332008C770A /* FrameCounter.hpp in Headers */,
+				2C34640A2A7B81EB0083F8B7 /* Troubleshooting.hpp in Headers */,
 				2C2AA37C26009C74003F3EBC /* b2_stack_allocator.h in Headers */,
 				2CC8BDAB28C75332008C770A /* agg_basics.h in Headers */,
 				2C28E9782796816D0004E07D /* bitstream.h in Headers */,
@@ -12801,6 +12897,7 @@
 				2C636EAF2657F7D300AF029F /* darray.h in Headers */,
 				2C43C87025C837F000D6D613 /* ftheader.h in Headers */,
 				2C636E7A2657F7D300AF029F /* miniaudio.h in Headers */,
+				2C2711422A7EA6CF00BD4014 /* CTrailRenderer.hpp in Headers */,
 				2C28E9812796816D0004E07D /* zstd_internal.h in Headers */,
 				2C695D52268EDDB400970FB3 /* par_shapes.h in Headers */,
 				2C47B49524DD97F2008D83BE /* muParserBytecode.h in Headers */,
@@ -12844,6 +12941,7 @@
 				2C13C9D025BD29FC0054B968 /* lfunc.h in Headers */,
 				2C2AA3AE26009C74003F3EBC /* b2_edge_shape.h in Headers */,
 				2CE762A229326ECF00E410FF /* OscPacketListener.h in Headers */,
+				2C0A98D22A7BB93800402926 /* NinePatchDetail.hpp in Headers */,
 				2C636E442657F7D300AF029F /* soloud_fft.h in Headers */,
 				2C57E9B32923A58700FB32FC /* ScriptCamera2DParameters.hpp in Headers */,
 				2CC8BC2428C7532F008C770A /* IAssetMonitor.hpp in Headers */,
@@ -13320,6 +13418,7 @@
 				2C636E6D2657F7D300AF029F /* soloud_audiosource.cpp in Sources */,
 				2C636EB62657F7D300AF029F /* soloud_speech.cpp in Sources */,
 				2C53373E264E0EE600CE0F1B /* AACDecoder.cpp in Sources */,
+				2C94E2262A85369B00AD6935 /* SivSimpleFollowCamera3D.cpp in Sources */,
 				2CC8BBC128C7532F008C770A /* P2Triangle.cpp in Sources */,
 				2CC8BB6228C7532F008C770A /* OggVorbisEncoder.cpp in Sources */,
 				2CC8BC0328C7532F008C770A /* SivTextInput.cpp in Sources */,
@@ -13350,10 +13449,12 @@
 				2C47B49024DD97F2008D83BE /* muParserBase.cpp in Sources */,
 				2C439F81241DCEA9001154C2 /* strtod.cc in Sources */,
 				2C0A4D672566A855002A4B5E /* sw_ft_raster.c in Sources */,
+				2C27113E2A7EA6CF00BD4014 /* SivTrail.cpp in Sources */,
 				2C636E772657F7D300AF029F /* soloud_core_3d.cpp in Sources */,
 				2CC8BBF128C7532F008C770A /* SivFormatUtility.cpp in Sources */,
 				2CC8BBA628C7532F008C770A /* EmptyFactory.cpp in Sources */,
 				2C13C8BF25B8FA9D0054B968 /* RecastRegion.cpp in Sources */,
+				2C2711412A7EA6CF00BD4014 /* TrailRendererFactory.cpp in Sources */,
 				2CE762D129327C5700E410FF /* SivOSCMessage.cpp in Sources */,
 				2C2AA38F26009C74003F3EBC /* b2_block_allocator.cpp in Sources */,
 				2CF21D1B249FAA8F00C864C9 /* SivTime.cpp in Sources */,
@@ -13373,6 +13474,7 @@
 				2CF21D24249FAA8F00C864C9 /* CWindow_macOS.mm in Sources */,
 				2C13C8C225B8FA9D0054B968 /* RecastMesh.cpp in Sources */,
 				2CC8BB8828C7532F008C770A /* SivVideoWriter.cpp in Sources */,
+				2C2711432A7EA6CF00BD4014 /* CTrailRenderer.cpp in Sources */,
 				2CC8BC7428C75330008C770A /* ScriptOffsetCircular.cpp in Sources */,
 				2CC8BC9328C75330008C770A /* ScriptCameraControl.cpp in Sources */,
 				2C28E9642796816C0004E07D /* zstd_ddict.c in Sources */,
@@ -13406,9 +13508,11 @@
 				2CC8BC6928C75330008C770A /* ScriptMat3x2.cpp in Sources */,
 				2CC8BC7F28C75330008C770A /* ScriptVec4.cpp in Sources */,
 				2CC8BB4D28C7532E008C770A /* SivBasicCamera3D.cpp in Sources */,
+				2C0A98D12A7BB93800402926 /* SivNinePatch.cpp in Sources */,
 				2C13C9AC25BD29FC0054B968 /* lfunc.c in Sources */,
 				2C60AE7B248158A500277281 /* quantities_cache_windows.cpp in Sources */,
 				2CC8BE3328C75333008C770A /* SivKeyboard.cpp in Sources */,
+				2C27113F2A7EA6CF00BD4014 /* SivTrailMotion.cpp in Sources */,
 				2CC8BCD128C75330008C770A /* ScriptMouse.cpp in Sources */,
 				2CE762AE29326ECF00E410FF /* UdpSocket.cpp in Sources */,
 				2C42324F242B155E00A16BCA /* cocoa_monitor.m in Sources */,
@@ -13638,6 +13742,7 @@
 				2CC8BC7A28C75330008C770A /* ScriptSpecialFolder.cpp in Sources */,
 				2C13C8CC25B8FA9D0054B968 /* DetourAssert.cpp in Sources */,
 				2C6390E925367F020030F18E /* ConstantBufferDetailFactory.cpp in Sources */,
+				2C0A98D32A7BB93800402926 /* NinePatchDetail.cpp in Sources */,
 				2C28E9462796816C0004E07D /* zstd_compress_superblock.c in Sources */,
 				2CC8BBA528C7532F008C770A /* CEmpty.cpp in Sources */,
 				2CB18EAB26B5A68700862C28 /* as_tokenizer.cpp in Sources */,
@@ -14220,6 +14325,7 @@
 				2CC8BBC728C7532F008C770A /* P2Quad.cpp in Sources */,
 				2C636E782657F7D300AF029F /* soloud_misc.cpp in Sources */,
 				2C13C9AE25BD29FC0054B968 /* lua.c in Sources */,
+				2C3464092A7B81EB0083F8B7 /* Troubleshooting.cpp in Sources */,
 				2C60AE83248158A500277281 /* memory_non_windows_non_darwin.cpp in Sources */,
 				2C834DA5248805D4006208B8 /* regsyntax.c in Sources */,
 				2CC8BCA128C75330008C770A /* ScriptDrawableText.cpp in Sources */,
