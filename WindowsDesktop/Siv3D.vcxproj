@@ -53,6 +53,7 @@
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\PhongMaterial.ipp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\PixelShader.ipp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\PlayingCard.ipp" />
+    <ClInclude Include="..\Siv3D\include\Siv3D\detail\Point3D.ipp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\RenderTexture.ipp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\Script.ipp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\detail\ScriptFunction.ipp" />
@@ -472,6 +473,7 @@
     <ClInclude Include="..\Siv3D\include\Siv3D\ModelObject.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\Monitor.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\MonitorInfo.hpp" />
+    <ClInclude Include="..\Siv3D\include\Siv3D\Morton.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\Mouse.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\MSDFGlyph.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\MSRenderTexture.hpp" />
@@ -604,6 +606,7 @@
     <ClInclude Include="..\Siv3D\include\Siv3D\PlayingCard.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\PNGFilter.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\Point.hpp" />
+    <ClInclude Include="..\Siv3D\include\Siv3D\Point3D.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\PointVector.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\PoissonDisk2D.hpp" />
     <ClInclude Include="..\Siv3D\include\Siv3D\Polygon.hpp" />
@@ -1543,6 +1546,14 @@
     <ClInclude Include="..\Siv3D\src\ThirdParty\infoware\system.hpp" />
     <ClInclude Include="..\Siv3D\src\ThirdParty\infoware\version.hpp" />
     <ClInclude Include="..\Siv3D\src\ThirdParty\levenshtein-sse\levenshtein-sse.hpp" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton2D.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton2D_LUTs.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton3D.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton3D_LUTs.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton_AVX512BITALG.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton_BMI.h" />
+    <ClInclude Include="..\Siv3D\src\ThirdParty\libmorton\morton_common.h" />
     <ClInclude Include="..\Siv3D\src\ThirdParty\lua\lapi.h" />
     <ClInclude Include="..\Siv3D\src\ThirdParty\lua\lauxlib.h" />
     <ClInclude Include="..\Siv3D\src\ThirdParty\lua\lcode.h" />
@@ -2151,6 +2162,7 @@
     <ClCompile Include="..\Siv3D\src\Siv3D\Model\ModelFactory.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Model\SivModel.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Monitor\SivMonitor.cpp" />
+    <ClCompile Include="..\Siv3D\src\Siv3D\Morton\SivMorton.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Mouse\MouseFactory.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Mouse\SivMouse.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\MSRenderTexture\SivMSRenderTexture.cpp" />
@@ -2210,6 +2222,7 @@
     <ClCompile Include="..\Siv3D\src\Siv3D\PixelShader\SivPixelShader.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Plane\SivPlane.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\PlayingCard\SivPlayingCard.cpp" />
+    <ClCompile Include="..\Siv3D\src\Siv3D\Point3D\SivPoint3D.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Point\SivPoint.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\PolygonEmitter2D\SivPolygonEmitter2D.cpp" />
     <ClCompile Include="..\Siv3D\src\Siv3D\Polygon\PolygonDetail.cpp" />
@@ -2946,6 +2959,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>false</VcpkgEnabled>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>..\Siv3D\include;..\Siv3D\include\ThirdParty;..\Siv3D\src;..\Siv3D\src\Siv3D-Platform\WindowsDesktop;..\Siv3D\src\Siv3D-Platform\OpenGL4;..\Siv3D\src\ThirdParty;..\Siv3D\src\ThirdParty\freetype;..\Siv3D\src\ThirdParty\soloud/include;..\Siv3D\src\ThirdParty-prebuilt;..\Dependencies\boost_1_74_0;$(IncludePath)</IncludePath>
