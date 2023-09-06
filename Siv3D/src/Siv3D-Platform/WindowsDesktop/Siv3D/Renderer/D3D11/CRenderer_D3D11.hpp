@@ -123,5 +123,11 @@ namespace s3d
 		D3D11DepthStencilState& getDepthStencilState() noexcept;
 
 		D3D11SamplerState& getSamplerState() noexcept;
+
+
+    ComPtr<ID3D12Device> getDevice12ComPtr() const;
+
+    ComPtr<ID3D12CommandQueue> getCommandQueueComPtr() const;
+
 	};
 }

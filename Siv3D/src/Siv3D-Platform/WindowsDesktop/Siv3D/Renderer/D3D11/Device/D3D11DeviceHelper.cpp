@@ -685,7 +685,7 @@ namespace s3d::detail
 
 			const auto& adapter = adapters[targetAdapterIndex];
 			LOG_INFO(U"ℹ️ targetAdapterIndex: {} ({})"_fmt(targetAdapterIndex, adapter.name));
-
+        
 			if (const auto deviceInfo = CreateDeviceHardware(pD3D11CreateDevice,
 				adapter, targetAdapterIndex, deviceFlags))
 			{
@@ -779,4 +779,155 @@ namespace s3d::detail
 
 		return none;
 	}
+
+
+  Optional<D3D11DeviceInfo> CreateDeviceD3D11On12(
+    ComPtr<IDXGIFactory5> pDXGIFactory5,
+    PFN_D3D12_CREATE_DEVICE pD3D12CreateDevice,
+    PFN_D3D11ON12_CREATE_DEVICE pD3D11On12CreateDevice,
+    const Array<D3D11Adapter>& adapters,
+    EngineOption::D3D11Driver driver,
+    Optional<size_t> requestedAdapterIndex,
+    const uint32 deviceFlags) {
+
+    D3D11DeviceInfo deviceInfo{};
+
+    LOG_SCOPED_TRACE(U"detail::CreateDeviceD3D11On12()");
+    // adapterIndex の範囲チェック
+    if (requestedAdapterIndex >= adapters.size())
+    {
+      LOG_FAIL(U"❌ requestedAdapterIndex >= adapters.size()");
+      return none;
+    }
+
+    // ハードウェアアダプタが見つからない場合は WARP にフォールバック
+    if (adapters.isEmpty())
+    {
+      LOG_WARNING(U"ℹ️ Adapter not found. Fallback to WARP");
+      driver = EngineOption::D3D11Driver::WARP;
+    }
+
+    if ((driver == EngineOption::D3D11Driver::Hardware)
+      || (driver == EngineOption::D3D11Driver::Hardware_FavorIntegrated))
+    {
+      size_t targetAdapterIndex;
+
+      if (requestedAdapterIndex)
+      {
+        targetAdapterIndex = *requestedAdapterIndex;
+      }
+      else
+      {
+        const bool favorIntegrated = (driver == EngineOption::D3D11Driver::Hardware_FavorIntegrated);
+        targetAdapterIndex = ChooseAdapterIndex(adapters, favorIntegrated);
+      }
+
+      {
+        ComPtr<ID3D12Device> device12;
+        ComPtr<ID3D12CommandQueue> commandQueue;
+        ComPtr<ID3D11Device> device;
+        ComPtr<ID3D11DeviceContext> context;
+        D3D_FEATURE_LEVEL featureLevel;
+
+
+        const auto& adapter = adapters[targetAdapterIndex];
+        LOG_INFO(U"ℹ️ targetAdapterIndex: {} ({})"_fmt(targetAdapterIndex, adapter.name));
+
+        if (SUCCEEDED(pD3D12CreateDevice(adapter.pAdapter.Get(), D3D_FEATURE_LEVEL_11_0, IID_PPV_ARGS(&device12)))) {
+          // コマンドキューを作成
+
+          D3D12_COMMAND_QUEUE_DESC queueDesc = {};
+          queueDesc.Flags = D3D12_COMMAND_QUEUE_FLAG_NONE;
+          queueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
+          if (SUCCEEDED(device12->CreateCommandQueue(&queueDesc, IID_PPV_ARGS(&commandQueue)))) {
+            if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, nullptr, 0, &commandQueue, 0, 0, &device, &context, &featureLevel
+            ))) {
+               deviceInfo = {
+                  .adapterIndex = targetAdapterIndex,
+                  .deviceType = D3D_DRIVER_TYPE_HARDWARE,
+                  .featureLevel = featureLevel,
+                  .d3d11_1_runtimeSupport = (featureLevel >= D3D_FEATURE_LEVEL_11_1),
+                  .device = device,
+                  .context = context,
+                  .device12 = device12,
+                  .commandQueue = commandQueue,
+              };
+
+              LOG_INFO(U"✅ D3D11 device created. Driver type: Hardware ({0}) ({1})"_fmt(
+                adapter.name, detail::ToString(deviceInfo.featureLevel)));
+
+              // 次回実行時のために、選択したアダプターの情報を保存
+              if (driver == EngineOption::D3D11Driver::Hardware)
+              {
+                const AdapterCache cache
+                {
+                  .luid = adapter.adapterDesc.AdapterLuid,
+                  .vendorId = adapter.adapterDesc.VendorId,
+                  .deviceId = adapter.adapterDesc.DeviceId,
+                  .subSysId = adapter.adapterDesc.SubSysId,
+                  .revision = adapter.adapterDesc.Revision,
+                  .maxLevel = adapter.maxLevel,
+                  .selectedLevel = adapter.selectedLevel,
+                  .d3d11_1_runtimeSupport = adapter.d3d11_1_runtimeSupport,
+                  .computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x = adapter.computeShaders_Plus_RawAndStructuredBuffers_Via_Shader_4_x,
+                };
+
+                SaveAdapterCache(cache);
+              }
+
+
+            }
+
+          }
+
+        }
+
+      }
+      return Optional<D3D11DeviceInfo>(deviceInfo);
+
+    }
+
+    LOG_WARNING(U"ℹ️ Failed to create device from hardware. Fallback to WARP");
+    driver = EngineOption::D3D11Driver::WARP;
+
+    if (driver == EngineOption::D3D11Driver::WARP)
+    {
+
+      ComPtr<ID3D11Device> device;
+      ComPtr<ID3D11DeviceContext> context;
+      D3D_FEATURE_LEVEL featureLevel;
+      ComPtr<ID3D12Device> device12;
+      ComPtr<ID3D12CommandQueue> commandQueue;
+
+      ComPtr<IDXGIAdapter> warpAdapter;
+      if (SUCCEEDED(pDXGIFactory5->EnumWarpAdapter(IID_PPV_ARGS(&warpAdapter)))) {
+        if (SUCCEEDED(pD3D12CreateDevice(
+          warpAdapter.Get(),
+          D3D_FEATURE_LEVEL_11_0,
+          IID_PPV_ARGS(&device12)
+        ))) {
+          if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, nullptr, 0, &commandQueue, 0, 0, &device, &context, &featureLevel
+          ))) {
+            deviceInfo = {
+                .adapterIndex = none,
+                .deviceType = D3D_DRIVER_TYPE_WARP,
+                .featureLevel = featureLevel,
+                .d3d11_1_runtimeSupport = (featureLevel >= D3D_FEATURE_LEVEL_11_1),
+                .device = device,
+                .context = context,
+               .device12 = device12,
+               .commandQueue = commandQueue,
+            };
+
+            LOG_INFO(U"✅ D3D11 device created. Driver type: WARP ({0})"_fmt(
+              detail::ToString(deviceInfo.featureLevel)));
+            return Optional<D3D11DeviceInfo>(deviceInfo);
+          };
+        };
+      }
+    }
+
+    return none;
+  }
+
 }

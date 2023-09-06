@@ -28,5 +28,9 @@ namespace s3d
 		ComPtr<ID3D11Device> device;
 
 		ComPtr<ID3D11DeviceContext> context;
+
+    ComPtr<ID3D12Device> device12;
+    ComPtr<ID3D12CommandQueue> commandQueue;
+
 	};
 }

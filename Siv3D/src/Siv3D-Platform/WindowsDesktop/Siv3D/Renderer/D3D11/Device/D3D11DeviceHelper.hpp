@@ -97,6 +97,17 @@ namespace s3d::detail
 		Optional<size_t> requestedAdapterIndex,
 		const uint32 deviceFlags);
 
+  [[nodiscard]]
+  Optional<D3D11DeviceInfo> CreateDeviceD3D11On12(
+    ComPtr<IDXGIFactory5> pDXGIFactory5,
+    PFN_D3D12_CREATE_DEVICE pD3D12CreateDevice,
+    PFN_D3D11ON12_CREATE_DEVICE pD3D11On12CreateDevice,
+    const Array<D3D11Adapter>& adapters,
+    EngineOption::D3D11Driver driver,
+    Optional<size_t> requestedAdapterIndex,
+    const uint32 deviceFlags);
+
+
 	void SaveAdapterCache(const AdapterCache& cache);
 
 	[[nodiscard]]

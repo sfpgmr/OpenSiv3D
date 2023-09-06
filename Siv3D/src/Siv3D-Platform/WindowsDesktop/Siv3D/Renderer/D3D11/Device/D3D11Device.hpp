@@ -26,6 +26,8 @@ namespace s3d
 		bool m_hasDebugLayer = false;
 
 		PFN_D3D11_CREATE_DEVICE m_pD3D11CreateDevice = nullptr;
+    PFN_D3D12_CREATE_DEVICE m_pD3D12CreateDevice = nullptr;
+    PFN_D3D11ON12_CREATE_DEVICE m_pD3D11On12CreateDevice = nullptr;
 
 		ComPtr<IDXGIFactory2> m_DXGIFactory2;
 		
@@ -34,6 +36,7 @@ namespace s3d
 		Array<D3D11Adapter> m_adapters;
 
 		D3D11DeviceInfo m_deviceInfo;
+
 
 	public:
 
@@ -57,6 +60,12 @@ namespace s3d
 
 		[[nodiscard]]
 		ID3D11DeviceContext* getContext() const noexcept;
+
+    [[nodiscard]]
+    ComPtr<ID3D12Device> getDevice12ComPtr() const noexcept;
+
+    [[nodiscard]]
+    ComPtr<ID3D12CommandQueue> getCommandQueueComPtr() const noexcept;
 
 		[[nodiscard]]
 		bool hasDXGI_1_4() const noexcept;

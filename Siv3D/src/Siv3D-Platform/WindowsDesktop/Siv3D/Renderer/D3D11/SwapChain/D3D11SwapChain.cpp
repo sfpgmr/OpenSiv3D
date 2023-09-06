@@ -64,10 +64,9 @@ namespace s3d
 		m_desc.SwapEffect	= (device.getDXGIFactory5() ? DXGI_SWAP_EFFECT_FLIP_DISCARD : DXGI_SWAP_EFFECT_DISCARD);
 		m_desc.AlphaMode	= DXGI_ALPHA_MODE_IGNORE;
 		m_desc.Flags		= 0;
-
 		// Swap chain を作成
 		{
-			LOG_TRACE(U"IDXGIFactory2::CreateSwapChainForHwnd()");
+      LOG_TRACE(U"IDXGIFactory2::CreateSwapChainForHwnd()");
 			if (FAILED(device.getDXGIFactory2()->CreateSwapChainForHwnd(
 				m_device,
 				hWnd,

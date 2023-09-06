@@ -229,4 +229,14 @@ namespace s3d
 	{
 		return *m_samplerState;
 	}
+
+  ComPtr<ID3D12Device>  CRenderer_D3D11::getDevice12ComPtr() const {
+    return m_device->getDevice12ComPtr();
+  }
+
+
+  ComPtr<ID3D12CommandQueue>  CRenderer_D3D11::getCommandQueueComPtr() const {
+    return m_device->getCommandQueueComPtr();
+  }
+
 }

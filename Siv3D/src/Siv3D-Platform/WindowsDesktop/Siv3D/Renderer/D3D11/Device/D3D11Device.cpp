@@ -25,6 +25,9 @@ namespace s3d
 		// d3d11.dll から D3D11CreateDevice() を取得
 		LibraryHandle moduleD3D11 = DLL::LoadSystemLibrary(L"d3d11.dll");
 		m_pD3D11CreateDevice = DLL::GetFunction(moduleD3D11, "D3D11CreateDevice");
+    m_pD3D11On12CreateDevice = DLL::GetFunction(moduleD3D11, "D3D11On12CreateDevice");
+    LibraryHandle moduleD3D12 = DLL::LoadSystemLibrary(L"d3d12.dll");
+    m_pD3D12CreateDevice = DLL::GetFunction(moduleD3D12, "D3D12CreateDevice");
 
 		// dxgi.dll から　CreateDXGIFactory1() を取得
 		LibraryHandle moduleDXGI = DLL::LoadSystemLibrary(L"dxgi.dll");
@@ -87,8 +90,10 @@ namespace s3d
 					deviceFlag = 0;
 				}
 
-				deviceInfo = detail::CreateDevice(m_pD3D11CreateDevice, m_adapters,
-					g_engineOptions.d3d11Driver, unspecified, deviceFlag);
+				//deviceInfo = detail::CreateDevice(m_pD3D11CreateDevice, m_adapters,
+				//	g_engineOptions.d3d11Driver, unspecified, deviceFlag);
+        deviceInfo = detail::CreateDeviceD3D11On12(m_DXGIFactory5,m_pD3D12CreateDevice,m_pD3D11On12CreateDevice, m_adapters,
+          g_engineOptions.d3d11Driver, unspecified, deviceFlag);
 
 				if (deviceInfo)
 				{
@@ -136,4 +141,13 @@ namespace s3d
 	{
 		return (m_DXGIFactory5.Get() != nullptr);
 	}
+
+  ComPtr<ID3D12Device> D3D11Device::getDevice12ComPtr() const noexcept {
+    return m_deviceInfo.device12;
+  }
+
+  ComPtr<ID3D12CommandQueue> D3D11Device::getCommandQueueComPtr() const noexcept {
+    return m_deviceInfo.commandQueue;
+  }
+
 }
