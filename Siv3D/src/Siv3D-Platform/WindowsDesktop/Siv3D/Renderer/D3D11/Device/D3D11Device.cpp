@@ -26,6 +26,7 @@ namespace s3d
 		LibraryHandle moduleD3D11 = DLL::LoadSystemLibrary(L"d3d11.dll");
 		m_pD3D11CreateDevice = DLL::GetFunction(moduleD3D11, "D3D11CreateDevice");
     m_pD3D11On12CreateDevice = DLL::GetFunction(moduleD3D11, "D3D11On12CreateDevice");
+
     LibraryHandle moduleD3D12 = DLL::LoadSystemLibrary(L"d3d12.dll");
     m_pD3D12CreateDevice = DLL::GetFunction(moduleD3D12, "D3D12CreateDevice");
 

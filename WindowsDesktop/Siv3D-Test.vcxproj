@@ -51,6 +51,7 @@
     <LocalDebuggerWorkingDirectory>$(ProjectDir)App</LocalDebuggerWorkingDirectory>
     <IncludePath>$(SolutionDir)\..\Siv3D\include;$(SolutionDir)\..\Siv3D\include\ThirdParty;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)\..\Siv3D\lib\Windows;$(LibraryPath)</LibraryPath>
+    <SourcePath>D:\pj\OpenSiv3D\Siv3D\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -75,6 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <BuildStlModules>false</BuildStlModules>
+      <SupportJustMyCode>false</SupportJustMyCode>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

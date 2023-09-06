@@ -792,6 +792,17 @@ namespace s3d::detail
 
     D3D11DeviceInfo deviceInfo{};
 
+    const D3D_FEATURE_LEVEL featureLevels[] = {
+      D3D_FEATURE_LEVEL_11_1,
+      D3D_FEATURE_LEVEL_11_0,
+      D3D_FEATURE_LEVEL_10_1,
+      D3D_FEATURE_LEVEL_10_0,
+      D3D_FEATURE_LEVEL_9_3,
+      D3D_FEATURE_LEVEL_9_2,
+      D3D_FEATURE_LEVEL_9_1,
+    };
+
+
     LOG_SCOPED_TRACE(U"detail::CreateDeviceD3D11On12()");
     // adapterIndex の範囲チェック
     if (requestedAdapterIndex >= adapters.size())
@@ -834,14 +845,20 @@ namespace s3d::detail
         LOG_INFO(U"ℹ️ targetAdapterIndex: {} ({})"_fmt(targetAdapterIndex, adapter.name));
 
         if (SUCCEEDED(pD3D12CreateDevice(adapter.pAdapter.Get(), D3D_FEATURE_LEVEL_11_0, IID_PPV_ARGS(&device12)))) {
-          // コマンドキューを作成
+          LOG_INFO(U"✅ d3d12 device created.");
+
+//          if (SUCCEEDED(pD3D12CreateDevice(nullptr, D3D_FEATURE_LEVEL_11_0, IID_PPV_ARGS(&device12)))) {
+            // コマンドキューを作成
 
           D3D12_COMMAND_QUEUE_DESC queueDesc = {};
           queueDesc.Flags = D3D12_COMMAND_QUEUE_FLAG_NONE;
           queueDesc.Type = D3D12_COMMAND_LIST_TYPE_DIRECT;
           if (SUCCEEDED(device12->CreateCommandQueue(&queueDesc, IID_PPV_ARGS(&commandQueue)))) {
-            if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, nullptr, 0, &commandQueue, 0, 0, &device, &context, &featureLevel
+            LOG_INFO(U"✅ d3d12 command queue created.");
+
+            if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, featureLevels,(UINT)__crt_countof(featureLevels), reinterpret_cast<IUnknown*const*>(commandQueue.GetAddressOf()), 1, 0, &device, &context, &featureLevel
             ))) {
+                LOG_INFO(U"✅ D3D11On12Device created.");
                deviceInfo = {
                   .adapterIndex = targetAdapterIndex,
                   .deviceType = D3D_DRIVER_TYPE_HARDWARE,
@@ -874,7 +891,7 @@ namespace s3d::detail
 
                 SaveAdapterCache(cache);
               }
-
+              return Optional<D3D11DeviceInfo>(deviceInfo);
 
             }
 
@@ -883,7 +900,6 @@ namespace s3d::detail
         }
 
       }
-      return Optional<D3D11DeviceInfo>(deviceInfo);
 
     }
 
@@ -901,13 +917,16 @@ namespace s3d::detail
 
       ComPtr<IDXGIAdapter> warpAdapter;
       if (SUCCEEDED(pDXGIFactory5->EnumWarpAdapter(IID_PPV_ARGS(&warpAdapter)))) {
+        LOG_INFO(U"✅ warp adapter found.");
         if (SUCCEEDED(pD3D12CreateDevice(
           warpAdapter.Get(),
           D3D_FEATURE_LEVEL_11_0,
           IID_PPV_ARGS(&device12)
         ))) {
-          if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, nullptr, 0, &commandQueue, 0, 0, &device, &context, &featureLevel
+          LOG_INFO(U"✅ d3d12 warp device created.");
+          if (SUCCEEDED(pD3D11On12CreateDevice(device12.Get(), deviceFlags, featureLevels, (UINT)__crt_countof(featureLevels), reinterpret_cast<IUnknown* const*>(commandQueue.GetAddressOf()), 1, 0, device.GetAddressOf(), context.GetAddressOf(), &featureLevel
           ))) {
+            LOG_INFO(U"✅ warp D3D11On12Device created.");
             deviceInfo = {
                 .adapterIndex = none,
                 .deviceType = D3D_DRIVER_TYPE_WARP,

@@ -2974,6 +2974,8 @@
     <OutDir>..\Siv3D\lib\Windows\</OutDir>
     <IntDir>$(SolutionDir)Intermediate\$(ProjectName)\Debug\Intermediate\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <ReferencePath>$(VC_ReferencesPath_x64);D:\pj\OpenSiv3D\Siv3D\src;</ReferencePath>
+    <SourcePath>D:\pj\OpenSiv3D\Siv3D\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -3008,7 +3010,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;_ENABLE_EXTENDED_ALIGNED_STORAGE;SIV3D_LIBRARY_BUILD;GLEW_STATIC;ONIG_STATIC;MUPARSER_STATIC;MSDFGEN_USE_CPP11;__WINDOWS_WASAPI__;WITH_MINIAUDIO;WITH_NOSOUND;_CRT_SECURE_NO_WARNINGS;AS_DEBUG;AS_USE_NAMESPACE;_SILENCE_CXX20_CISO646_REMOVED_WARNING;_SILENCE_ALL_CXX23_DEPRECATION_WARNINGS;OSC_HOST_LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
