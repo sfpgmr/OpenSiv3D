@@ -39,6 +39,25 @@ namespace s3d
 			? (DLL::LoadSystemLibraryNoThrow(L"D3D11_1SDKLayers.dll") != nullptr)
 			: false;
 
+    if (m_hasDebugLayer) {
+      // Enable the debug layer (requires the Graphics Tools "optional feature").
+// NOTE: Enabling the debug layer after device creation will invalidate the active device.
+      {
+        ComPtr<ID3D12Debug1> debugController;
+        PFN_D3D12_GET_DEBUG_INTERFACE pD3D12GetDebugInterface = DLL::GetFunction(moduleD3D12, "D3D12GetDebugInterface");
+        if (SUCCEEDED(pD3D12GetDebugInterface(IID_PPV_ARGS(&debugController))))
+        {
+          debugController->EnableDebugLayer();
+          debugController->SetEnableGPUBasedValidation(true);
+          debugController->SetEnableSynchronizedCommandQueueValidation(true);
+
+          // Enable additional debug layers.
+          //dxgiFactoryFlags |= DXGI_CREATE_FACTORY_DEBUG;
+        }
+      }
+
+    }
+
 		// DXGI 1.2
 		if (FAILED(pCreateDXGIFactory1(IID_PPV_ARGS(&m_DXGIFactory2))))
 		{
