@@ -418,6 +418,14 @@ namespace s3d
 		double perimeter() const noexcept;
 
 		[[nodiscard]]
+		Vec2 centroid() const;
+
+		/// @brief 全体の凸包を計算して返します。
+		/// @return 全体の凸包
+		[[nodiscard]]
+		Polygon computeConvexHull() const;
+
+		[[nodiscard]]
 		RectF computeBoundingRect() const noexcept;
 
 		[[nodiscard]]
