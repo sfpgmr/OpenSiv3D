@@ -2,8 +2,8 @@
 //
 //	This file is part of the Siv3D Engine.
 //
-//	Copyright (c) 2008-2023 Ryo Suzuki
-//	Copyright (c) 2016-2023 OpenSiv3D Project
+//	Copyright (c) 2008-2025 Ryo Suzuki
+//	Copyright (c) 2016-2025 OpenSiv3D Project
 //
 //	Licensed under the MIT License.
 //
@@ -523,6 +523,30 @@ namespace s3d
 		/// @return 上下左右方向に拡大縮小した長方形
 		[[nodiscard]]
 		constexpr Rect stretched(value_type top, value_type right, value_type bottom, value_type left) const noexcept;
+
+		/// @brief 上方向に拡大縮小した長方形を返します。
+		/// @param top 上方向の拡大縮小量
+		/// @return 上方向に拡大縮小した長方形
+		[[nodiscard]]
+		constexpr Rect stretched(Arg::top_<value_type> top) const noexcept;
+
+		/// @brief 右方向に拡大縮小した長方形を返します。
+		/// @param right 右方向の拡大縮小量
+		/// @return 右方向に拡大縮小した長方形
+		[[nodiscard]]
+		constexpr Rect stretched(Arg::right_<value_type> right) const noexcept;
+
+		/// @brief 下方向に拡大縮小した長方形を返します。
+		/// @param bottom 下方向の拡大縮小量
+		/// @return 下方向に拡大縮小した長方形
+		[[nodiscard]]
+		constexpr Rect stretched(Arg::bottom_<value_type> bottom) const noexcept;
+
+		/// @brief 左方向に拡大縮小した長方形を返します。
+		/// @param left 左方向の拡大縮小量
+		/// @return 左方向に拡大縮小した長方形
+		[[nodiscard]]
+		constexpr Rect stretched(Arg::left_<value_type> left) const noexcept;
 
 		[[nodiscard]]
 		constexpr RectF scaled(double s) const noexcept;
